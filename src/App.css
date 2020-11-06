@@ -1,5 +1,11 @@
+* {
+  outline: 1px dotted red;
+  background-color: #282c34;
+}
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .App-logo {
@@ -12,11 +18,11 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  width: 50%;
   display: flex;
+  /* display: inline-block; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -26,6 +32,12 @@
 
 .App-link {
   color: #61dafb;
+}
+.righty li {
+  color: #61dafb;
+}
+.righty ul{
+  list-style: none;
 }
 
 @keyframes App-logo-spin {
