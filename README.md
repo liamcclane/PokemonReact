@@ -2,6 +2,8 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+I was able to create a public repo while still keeping my api key safe
+
 ## Available Scripts
 
 In the project directory, you can run:
