@@ -1,0 +1,7 @@
+.footerList{
+    list-style: none;
+    display: flex;
+}
+.footerTags{
+    flex-direction: row;
+}
