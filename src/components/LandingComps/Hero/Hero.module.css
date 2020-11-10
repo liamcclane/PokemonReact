@@ -1,0 +1,70 @@
+.inners{
+    width: 85vw;
+    margin: 0px auto;
+}
+
+.inners h5 {
+    font-weight: 400;
+}
+
+#signUpBtn{
+    border-radius: 0%;
+    width: 25%;
+    letter-spacing: 5px;
+}
+#searchy {
+    padding: 5px 2px 3px 5px;
+    /* width: 55%; */
+    flex-grow: 2;
+}
+.image{
+    background-image: url('./../../../assets/images/posters.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 66vh;
+    width: 100vw;
+    z-index: -3;
+}
+.after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 66vh;
+    width: 100vw;
+    padding: 15vh  0px;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.904),rgba(0, 0, 0, 0.849), 
+        rgba(0, 0, 0, 0.459),
+        rgba(0, 0, 0, 0.835), rgba(0, 0, 0, 0.938));
+        color: #FFF;
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .inners {
+        width: 50vw;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
