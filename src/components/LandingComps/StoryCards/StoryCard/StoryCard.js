@@ -1,13 +1,14 @@
 import React from 'react';
 
 
-export default props => {
-    
-    let stuff = props.info;
+export default ({ info, someImg }) => {
 
     return (
-        <div>
-            {stuff}
-        </div>
+        <>
+            <div className="col-3">
+
+            </div>
+            <img src={someImg} alt="img"></img>
+        </>
     );
 }

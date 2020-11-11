@@ -1,0 +1,15 @@
+.cardContainer {
+    border-top: 8px solid #222;
+    padding: 3em 5em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.cardContainerReverse {
+    flex-direction: row-reverse;
+}
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
