@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // importing other components
-import FAQItem from './FAQItems/FAQItem';
+import FAQItem from './FAQItem/FAQItem';
 
 // importing style sheets
 import CSSClasses from './FAQComp.module.css';
@@ -40,11 +40,16 @@ export default props => {
     ]);
 
     const openHandler = (e, ind) => {
-        let bool = stories[ind]['isOpen'];
-        // copied
-        let arr = [...stories];
-        // altered
-        arr[ind]["isOpen"] = !bool;
+        e.preventDefault();
+        // check initial boolean
+        let initBool = stories[ind]["isOpen"]; 
+
+        // set all the objects key 'isOpen' to false
+        let arr = stories.map(ele => {ele["isOpen"] = false; return ele});
+        
+        // alter the one, 
+        arr[ind]["isOpen"] = !initBool;
+
         // replaced back into setState
         setStories(arr);
     }
