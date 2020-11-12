@@ -23,7 +23,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     height: 66vh;
-    width: 100vw;
+    width: 99vw;
     z-index: -3;
 }
 .after {
@@ -31,7 +31,7 @@
     top: 0;
     left: 0;
     height: 66vh;
-    width: 100vw;
+    width: 99vw;
     padding: 15vh  0px;
     background: linear-gradient(
         rgba(0, 0, 0, 0.904),rgba(0, 0, 0, 0.849), 
