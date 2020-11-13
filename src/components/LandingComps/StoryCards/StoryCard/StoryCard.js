@@ -7,8 +7,6 @@ import CSSClasses from './StoryCard.module.css';
 
 // importing static content
 
-
-
 export default ({ header, underText, img }) => {
 
     let imgClasses = ["img-thumbnail", CSSClasses.img];
