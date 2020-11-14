@@ -19,7 +19,7 @@ export default ({ header, underText, img }) => {
                 <h1>{header}</h1>
                 <p>{underText}</p>
             </div>
-            <div className="col-5">
+            <div className="col-5 text-center">
                 <img src={img} alt="img" className={imgClasses}></img>
             </div>
         </>

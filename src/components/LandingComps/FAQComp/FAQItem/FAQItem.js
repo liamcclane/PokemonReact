@@ -36,7 +36,7 @@ export default ({ title, information, ind, openHandler, isOpen }) => {
             <div id={"title" + ind} className="collapse" aria-labelledby={"heading" + ind} data-parent="#accordion">
                 <div className={cardBodyClasses}>
                     {information.map((ele, i) => (
-                        <p ind={i}>{ele}</p>
+                        <p ind={i} key={i}>{ele}</p>
                     ))}
                 </div>
             </div>
