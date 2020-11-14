@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 // importing other components
 import FAQItem from './FAQItem/FAQItem';
+import SignInForm from './../SignInForm/SignInForm';
 
 // importing style sheets
 import CSSClasses from './FAQComp.module.css';
@@ -57,6 +58,7 @@ export default props => {
 
     return (
         <div className="col-9">
+            <h1>Frequently Asked Questions</h1>
             <div className={CSSClasses.myAccordian} id="accordion">
                 {stories.map((story, ind) => (
                     <FAQItem key={ind} ind={ind} title={story.title} 
@@ -64,6 +66,7 @@ export default props => {
                     openHandler={openHandler}/>
                 ))}
             </div>
+            <SignInForm />
         </div>
     );
 };
