@@ -10,16 +10,18 @@ import CSSClasses from './StoryCard.module.css';
 export default ({ header, underText, img }) => {
 
     let imgClasses = ["img-thumbnail", CSSClasses.img];
+    let leftBox = ["col", "col-5-lg", CSSClasses.lefty];
+    leftBox = leftBox.join(" ");
     imgClasses = imgClasses.join(" ");
 
 
     return (
         <>
-            <div className="col-5">
-                <h1>{header}</h1>
-                <p>{underText}</p>
+            <div className="col">
+                <h1 className={CSSClasses.lefty}>{header}</h1>
+                <p className={CSSClasses.lefty}>{underText}</p>
             </div>
-            <div className="col-5 text-center">
+            <div className="col text-center">
                 <img src={img} alt="img" className={imgClasses}></img>
             </div>
         </>

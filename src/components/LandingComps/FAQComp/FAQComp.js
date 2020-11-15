@@ -55,10 +55,12 @@ export default props => {
         setStories(arr);
     }
 
+    // let myCol = ["col", "col-6-lg", ];
+    // myCol = myCol.join(" ");
 
     return (
-        <div className="col-9">
-            <h1>Frequently Asked Questions</h1>
+        <div>
+            <h1 className="text-center">Frequently Asked Questions</h1>
             <div className={CSSClasses.myAccordian} id="accordion">
                 {stories.map((story, ind) => (
                     <FAQItem key={ind} ind={ind} title={story.title} 

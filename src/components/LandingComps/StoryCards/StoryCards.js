@@ -73,7 +73,7 @@ export default props => {
                             <StoryCard header={ele.header} underText={ele.underText} img={ele.img} />
                         </li>)
                 })}
-                <li className={CSSClasses.cardContainer}>
+                <li className={[CSSClasses.cardContainer, CSSClasses.FAQWrapper].join(" ")}>
                     <FAQComp />
                 </li>
             </ul>
