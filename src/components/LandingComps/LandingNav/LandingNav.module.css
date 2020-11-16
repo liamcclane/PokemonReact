@@ -7,5 +7,8 @@
     font-weight: bolder;
 }
 .wrapper {
-    width: 99vw;;
+    width: 99vw;
+    position: absolute;
+    top: 0;
+    left: 0;
 }

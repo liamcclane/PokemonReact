@@ -1,14 +1,20 @@
 import React from 'react';
 
+import Hero from './../../components/LandingComps/Hero/Hero';
 import LandingNav from './../../components/LandingComps/LandingNav/LandingNav';
-import LandingMain from './../../components/LandingComps/LandingMain';
+import StoryCards from './../../components/LandingComps/StoryCards/StoryCards';
 import Footer from './../../components/Footer';
 
 export default props => {
     return (
         <>
-            <LandingMain />
-            <LandingNav />
+            <div>
+                <Hero />
+                <LandingNav />
+            </div>
+            <div>
+                <StoryCards />
+            </div>
             <Footer />
         </>
     )
