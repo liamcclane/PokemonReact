@@ -36,8 +36,18 @@ function App() {
     })
     navigate("/");
   }
-  const signIn = () =>{
-    console.log("signin");
+  const signIn = (e, email) => {
+    e.preventDefault();
+    // find existing user in DB
+    // log them into the session
+    if (email.length > 0) {
+      setUser({
+        "FullName": "Jane Doe",
+        "username": email,
+        "email": email
+      })
+    }
+    navigate("/");
   }
   const signOut = (e) => {
     console.log("In here");
@@ -53,12 +63,12 @@ function App() {
   return (
     <div className="container-fluid">
       <Router>
-        {user.username.length == 0
+        {user.username.length === 0
           ? <Landing path="/" />
           : <DashBoard path={"/"} user={user} user={user} signOut={signOut} />
         }
         <DashBoard path="/user" user={user} signOut={signOut} />
-        <SignIn path="/signin" />
+        <SignIn path="/signin" signIn={signIn} />
         <Register path="/register" registerHandler={registerHandler} />
         <Register path="/register/:email" />
       </Router>

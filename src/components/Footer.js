@@ -49,7 +49,7 @@ export default props => {
                     <button className="btn btn-outline-secondary dropdown-toggle"
                         type="button" id="dropdownMenuButton"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <img src={World} alt="world" class={CSSClasses.worldFooter}></img>
+                        <img src={World} alt="world" className={CSSClasses.worldFooter}></img>
                     English
                 </button>
                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">

@@ -10,7 +10,7 @@ import CSSClasses from './NavBar.module.css';
 
 
 
-export default ({ ss }) => {
+export default ({ signOut }) => {
 
     const [navItems, setNavItems] = useState([
         { "name": "Home", "isActive": true },
@@ -20,7 +20,6 @@ export default ({ ss }) => {
         { "name": "New List", "isActive": false }
     ])
     
-    console.log(ss);
     return (
         <div className={CSSClasses.wrapper}>
             <nav className="navbar navbar-expand-lg">
@@ -40,7 +39,7 @@ export default ({ ss }) => {
                     </ul>
                     <Link className="form-inline nav-item btn btn-outline-danger ml-2" to="/">Other Link</Link>
                     <Link className="form-inline nav-item btn btn-outline-danger ml-2" to="/">Other Link</Link>
-                    <div className="form-inline nav-item btn btn-outline-danger ml-2" onClick={e => ss(e)}>Sign out</div>
+                    <div className="form-inline nav-item btn btn-outline-danger ml-2" onClick={e => signOut(e)}>Sign out</div>
                     <form className="form-inline my-2 my-lg-0">
                         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
-export default props => {
+export default ({ signIn }) => {
+
+    const [email, setEmail] = useState("");
+
+    const changey = e => {
+        setEmail(e.target.value);
+    }
+
     return (
         <>
-        Sign In.
+            <form onSubmit={e => signIn(e,email)}>
+                <input type="email" name="email"
+                    placeholder="email@mail.com"
+                    onChange={e => changey(e)} />
+                <input type="submit" className="btn btn-danger" />
+            </form>
         </>
     )
 }
