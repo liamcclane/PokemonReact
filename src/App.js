@@ -1,10 +1,10 @@
-import {useState} from 'react';
+import { useState } from 'react';
 
 
 import './App.css';
 
 // importing third party libraries
-import { Router,navigate } from '@reach/router';
+import { Router, navigate } from '@reach/router';
 
 // importing other components
 import Landing from './containers/LandingContainer/Landing';
@@ -22,17 +22,30 @@ import Register from './containers/Register/Register';
 function App() {
 
   const [user, setUser] = useState({
-    "FullName" : "",
-    "username" : "",
-    "email" : ""
+    "FullName": "",
+    "username": "",
+    "email": ""
   });
 
-  const registerHandler = (e,first,last,email) => {
+  const registerHandler = (e, first, last, email) => {
     e.preventDefault();
     setUser({
-      "FullName" : first + " " + last,
-      "username" : first+last.charAt(0),
-      "email" : email
+      "FullName": first + " " + last,
+      "username": first + last.charAt(0),
+      "email": email
+    })
+    navigate("/");
+  }
+  const signIn = () =>{
+    console.log("signin");
+  }
+  const signOut = (e) => {
+    console.log("In here");
+    e.preventDefault();
+    setUser({
+      "FullName": "",
+      "username": "",
+      "email": ""
     })
     navigate("/");
   }
@@ -42,9 +55,9 @@ function App() {
       <Router>
         {user.username.length == 0
           ? <Landing path="/" />
-          : <DashBoard path="/" user={user} />
+          : <DashBoard path={"/"} user={user} user={user} signOut={signOut} />
         }
-        <DashBoard path="/user" />
+        <DashBoard path="/user" user={user} signOut={signOut} />
         <SignIn path="/signin" />
         <Register path="/register" registerHandler={registerHandler} />
         <Register path="/register/:email" />

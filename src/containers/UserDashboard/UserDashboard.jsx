@@ -10,15 +10,17 @@ import Carousels from '../../components/UserDashBoardComps/Carsoules/Carousels';
 // importing static content images
 
 
-export default props => {
+export default ({user, signOut, f}) => {
 
     let lists = [1,2,3,4,5];
-
+    // console.log(signOut, " <= s in userDashboard.js");
+    // console.log(user, " user in <= userDashboard.js");
+    console.log(f, " f in <= userDashboard.js");
     return (
         <>
             <div>
-                <PreviewPlayer />
-                <NavBar />
+                {/* <PreviewPlayer /> */}
+                <NavBar ss={signOut} />
             </div>
             <div>
                 {lists.map((ele, ind) => (

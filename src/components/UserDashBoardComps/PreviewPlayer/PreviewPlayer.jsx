@@ -21,11 +21,11 @@ export default props => {
         //     console.log(res.data);
         // })
         // .catch(err => console.log(err))
-        console.log("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc&key=" + process.env.REACT_APP_YT_KEY);
+        // console.log("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc&key=" + process.env.REACT_APP_YT_KEY);
         axios.get("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc&key=" + process.env.REACT_APP_YT_KEY)
             .then(res => {
                 console.log(res.data.items[0].id);
-                setImg(res.data.items[0].snippet.thumbnails.standard.url);
+                // setImg(res.data.items[0].snippet.thumbnails.standard.url);
                 setVid(res.data.items[0].id)
             })
             .catch(err => console.log(err))
@@ -35,9 +35,7 @@ export default props => {
     return (
         <>
             <iframe src={"https://www.youtube.com/embed/"+ vid} allowFullScreen title="TheVid">
-
             </iframe>
-            <img src={img} alt="api call"></img>
             <h1>Preview Player</h1>
 
         </>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 // importing 3rd party libs
-import { Link } from '@reach/router';
+import { Link, navigate } from '@reach/router';
 
 // importing other components
 // importing css moudles
@@ -10,7 +10,7 @@ import CSSClasses from './NavBar.module.css';
 
 
 
-export default props => {
+export default ({ ss }) => {
 
     const [navItems, setNavItems] = useState([
         { "name": "Home", "isActive": true },
@@ -19,8 +19,8 @@ export default props => {
         { "name": "New & Popular", "isActive": false },
         { "name": "New List", "isActive": false }
     ])
-
-
+    
+    console.log(ss);
     return (
         <div className={CSSClasses.wrapper}>
             <nav className="navbar navbar-expand-lg">
@@ -40,7 +40,7 @@ export default props => {
                     </ul>
                     <Link className="form-inline nav-item btn btn-outline-danger ml-2" to="/">Other Link</Link>
                     <Link className="form-inline nav-item btn btn-outline-danger ml-2" to="/">Other Link</Link>
-                    <Link className="form-inline nav-item btn btn-outline-danger ml-2" to="/">Other Link</Link>
+                    <div className="form-inline nav-item btn btn-outline-danger ml-2" onClick={e => ss(e)}>Sign out</div>
                     <form className="form-inline my-2 my-lg-0">
                         <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
                         <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

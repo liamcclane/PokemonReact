@@ -27,7 +27,7 @@ export default ({ registerHandler }) => {
         setEmail(e.target.value);
     }
 
-
+    console.log(registerHandler);
     return (
         <>
             <h1>Register</h1>
