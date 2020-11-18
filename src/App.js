@@ -4,7 +4,7 @@ import {useState} from 'react';
 import './App.css';
 
 // importing third party libraries
-import { Router } from '@reach/router';
+import { Router,navigate } from '@reach/router';
 
 // importing other components
 import Landing from './containers/LandingContainer/Landing';
@@ -22,11 +22,20 @@ import Register from './containers/Register/Register';
 function App() {
 
   const [user, setUser] = useState({
-    "Name" : "",
     "FullName" : "",
-    "username" : "liamcclane",
-    "email" : "",
+    "username" : "",
+    "email" : ""
   });
+
+  const registerHandler = (e,first,last,email) => {
+    e.preventDefault();
+    setUser({
+      "FullName" : first + " " + last,
+      "username" : first+last.charAt(0),
+      "email" : email
+    })
+    navigate("/");
+  }
 
   return (
     <div className="container-fluid">
@@ -35,8 +44,9 @@ function App() {
           ? <Landing path="/" />
           : <DashBoard path="/" user={user} />
         }
-        <SignIn path="/signin" user={user}  setUser={setUser} />
-        <Register path="/register" />
+        <DashBoard path="/user" />
+        <SignIn path="/signin" />
+        <Register path="/register" registerHandler={registerHandler} />
         <Register path="/register/:email" />
       </Router>
     </div>

@@ -22,7 +22,7 @@ export default props => {
             </div>
             <div>
                 {lists.map((ele, ind) => (
-                    <Carousels />
+                    <Carousels key={ind} />
                 ))}
             </div>
         </>
