@@ -7,6 +7,7 @@ import NavBar from '../../components/UserDashBoardComps/NavBar/NavBar';
 import Carousels from '../../components/UserDashBoardComps/Carsoules/Carousels';
 
 // importing stylesheets
+import CSSClasses from './UserDashboard.module.css';
 // importing static content images
 
 
@@ -16,10 +17,20 @@ export default ({user, signOut}) => {
     
     return (
         <>
+                <NavBar signOut={signOut} />
             <div>
                 {/* <PreviewPlayer /> */}
-                <NavBar signOut={signOut} />
             </div>
+            <div style={{ height: "100px", width: "100%", background: "white" }}></div>
+
+            <div className={CSSClasses.myContainer}>
+                <div className={CSSClasses.item}>placeholder 1</div>
+                <div className={CSSClasses.item}>placeholder 2</div>
+                <div className={CSSClasses.item}>placeholder 3</div>
+                <div className={CSSClasses.item}>placeholder 4</div>
+                <div className={CSSClasses.item}>placeholder 5</div>
+            </div>
+
             <div>
                 {lists.map((ele, ind) => (
                     <Carousels key={ind} />

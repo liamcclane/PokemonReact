@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 
 // importing 3rd party libs
 import axios from 'axios';
@@ -13,6 +13,7 @@ import CSSClasses from './Carousel.module.css';
 export default props => {
     return (
         <>
+            
             carousel
         </>
     )

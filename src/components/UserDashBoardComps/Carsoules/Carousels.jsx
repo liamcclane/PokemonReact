@@ -15,8 +15,9 @@ export default props => {
     let arr = [1,2,3];
     return (
         <>
+            
             <h1>Carousels</h1>
-            {arr.map((ele, ind) => (<Carousel />))}
+            {arr.map((ele, ind) => (<Carousel key={ind} />))}
         </>
     )
 }
