@@ -18,6 +18,32 @@ import Register from './containers/Register/Register';
 // importing static content
 
 
+/**My Backlog
+ * 
+ *  -on full screen landing page accordion text is over expanding
+ * 
+ */
+
+/**
+ let user = {
+   "_id": "1234",
+   "FullName": "Lia McClane",
+   "username": "LiaM",
+   "email": "lia@email.com",
+   "lists": ["9902", "1029"]
+ }
+ let list = {
+   "_id": "9902",
+   "title": "My Favorites",
+   "movies": [
+     "tt4574334", // stranger thing
+     "tt7259746", // queer eye
+     "tt6320628" // spiderman far from home
+   ]
+ }
+ */
+
+
 
 function App() {
 
@@ -32,7 +58,8 @@ function App() {
     setUser({
       "FullName": first + " " + last,
       "username": first + last.charAt(0),
-      "email": email
+      "email": email,
+      "lists": [],
     })
     navigate("/");
   }
@@ -44,7 +71,8 @@ function App() {
       setUser({
         "FullName": "Jane Doe",
         "username": email,
-        "email": email
+        "email": email,
+        "lists": ["9902", "1029"],
       })
     }
     navigate("/");
@@ -65,13 +93,14 @@ function App() {
       <Router>
         {user.username.length === 0
           ? <Landing path="/" />
-          : <DashBoard path={"/"} user={user} user={user} signOut={signOut} />
+          : <DashBoard path={"/"} user={user} signOut={signOut} />
         }
         <DashBoard path="/user" user={user} signOut={signOut} />
         <SignIn path="/signin" signIn={signIn} />
         <Register path="/register" registerHandler={registerHandler} />
         <Register path="/register/:email" />
       </Router>
+
     </div>
   );
 }

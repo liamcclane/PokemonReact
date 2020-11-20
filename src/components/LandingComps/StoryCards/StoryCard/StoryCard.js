@@ -14,7 +14,7 @@ export default ({ header, underText, img }) => {
     leftBox = leftBox.join(" ");
     imgClasses = imgClasses.join(" ");
 
-
+    console.log("img in StoryCard.js", img);
     return (
         <>
             <div className="col">

@@ -6,8 +6,6 @@ import FAQComp from './../FAQComp/FAQComp';
 
 import CSSClasses from './StoryCards.module.css';
 
-import SomeImg from './../../../assets/images/posters_2.jpg';
-
 export default props => {
 
     const [stories, setStories] = useState([
@@ -15,21 +13,21 @@ export default props => {
             "somekindakey": "somekindValue1",
             "header": "Enjoy on your TV",
             "underText": "Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.",
-            "img": SomeImg,
+            "img": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
 
         },
         {
             "somekindakey": "somekindValue2",
             "header": "Download your shows to watch offline.",
             "underText": "Save your favorites easily and always have something to watch.",
-            "img": SomeImg,
+            "img": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
 
         },
         {
             "somekindakey": "somekindValue3",
             "header": "Watch everywhere.",
             "underText": " Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.",
-            "img": SomeImg,
+            "img": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
 
         }
     ])
@@ -46,16 +44,16 @@ export default props => {
     let axiosCalls = urls.map(ele => axios.get(ele));
 
     useEffect(() => {
-        axios.all([...axiosCalls])
-            .then(axios.spread((...responses) => {
-                setStories(stories.map((ele, j) => (
-                    {
-                        ...ele,
-                        "img": responses[j].data.Poster,
-                    }
-                )));
-            }))
-            .catch(errors => console.log(errors))
+        // axios.all([...axiosCalls])
+        //     .then(axios.spread((...responses) => {
+        //         setStories(stories.map((ele, j) => (
+        //             {
+        //                 ...ele,
+        //                 "img": responses[j].data.Poster,
+        //             }
+        //         )));
+        //     }))
+        //     .catch(errors => console.log(errors))
     }, []);
 
 
@@ -64,10 +62,11 @@ export default props => {
             <ul className={CSSClasses.list}>
                 {stories.map((ele, ind) => {
                     let classes = [CSSClasses.cardContainer];
-                    if (ind % 2 == 1) {
+                    if (ind % 2 === 1) {
                         classes.push(CSSClasses.cardContainerReverse);
                     }
                     classes = classes.join(' ');
+                    console.log("StoryCards.js ", ele.img);
                     return (
                         <li key={ind} className={classes}>
                             <StoryCard header={ele.header} underText={ele.underText} img={ele.img} />
