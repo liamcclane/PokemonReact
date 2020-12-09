@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 
 import { useParams, useLocation } from '@reach/router';
 
-import BodyFrom from './../../components/RegisterComps/BodyForm';
+import BodyFrom from './../../components/LogInRegbody/BodyForm';
 import LandingNav from './../../components/LandingComps/LandingNav/LandingNav';
 import Footer from './../../components/Footer';
+import RegisterForm from './../../components/LogInRegbody/RegisterFrom/RegisterFrom';
 
 export default ({ registerHandler }) => {
     let blah = new URLSearchParams(useLocation().search);
-    console.log(blah.get("newEmail"));
+    // console.log(blah.get("newEmail"));
 
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
@@ -29,11 +30,14 @@ export default ({ registerHandler }) => {
     return (
         <>
             <LandingNav bgColor={"black"} />
-            <BodyFrom registerHandler={registerHandler}
-                firstName={firstName} lastName={lastName}
-                email={email}
-                changeyFirstName={changeyFirstName}
-                changeyLastName={changeyLastName} changeyEmail={changeyEmail} />
+            <BodyFrom>
+                <RegisterForm 
+                    registerHandler={registerHandler}
+                    firstName={firstName} lastName={lastName} email={email}
+                    changeyEmail={changeyEmail} changeyFirstName={changeyFirstName}
+                    changeyLastName={changeyLastName} 
+                ></RegisterForm>
+            </BodyFrom>
             <Footer />
         </>
     )

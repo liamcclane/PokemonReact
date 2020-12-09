@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 
+import BodyFrom from './../../components/LogInRegbody/BodyForm';
+import LandingNav from './../../components/LandingComps/LandingNav/LandingNav';
+import Footer from './../../components/Footer';
+import LoginForm from './../../components/LogInRegbody/LogInForm/LoginForm';
 
 export default ({ signIn }) => {
 
@@ -11,12 +15,11 @@ export default ({ signIn }) => {
 
     return (
         <>
-            <form onSubmit={e => signIn(e,email)}>
-                <input type="email" name="email"
-                    placeholder="email@mail.com"
-                    onChange={e => changey(e)} />
-                <input type="submit" className="btn btn-danger" />
-            </form>
+            <LandingNav bgColor={"black"} />
+            <BodyFrom>
+                <LoginForm email={email}  signIn={signIn} changey={changey}/>
+            </BodyFrom>
+            <Footer />
         </>
     )
 }
