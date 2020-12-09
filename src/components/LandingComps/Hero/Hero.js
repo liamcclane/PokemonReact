@@ -11,14 +11,9 @@ export default props => {
                 <div className={CSSClasses.image}></div>
                 <div className={CSSClasses.after}>
                     <div className={CSSClasses.inners}>
-                        <h1 className={CSSClasses.headerText}>Unlimited shows and movies to watch with friend and family</h1>
+                        <h1 className={CSSClasses.headerText}>Unlimited shows and movies to watch with friends and family</h1>
                         <h5>somethig else</h5>
                         <SignInForm />
-                        {/* <form>
-                                <input type="text" name="name"
-                                placeholder="email@email.com" id={CSSClasses.searchy}/>
-                                <input className="btn btn-danger" type="submit" value="Join Now!" id={CSSClasses.signUpBtn} />
-                        </form> */}
                     </div>
                 </div>
             </div>

@@ -13,47 +13,47 @@ export default props => {
             "somekindakey": "somekindValue1",
             "header": "Enjoy on your TV",
             "underText": "Watch on Smart TVs, Playstation, Xbox, Chromecast, Apple TV, Blu-ray players, and more.",
-            "img": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
-
+            // "img": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "img": "tt6320628" // spiderman far from home
         },
         {
             "somekindakey": "somekindValue2",
             "header": "Download your shows to watch offline.",
             "underText": "Save your favorites easily and always have something to watch.",
-            "img": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
-
+            // "img": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "img": "tt7259746", // queer eye
         },
         {
             "somekindakey": "somekindValue3",
             "header": "Watch everywhere.",
             "underText": " Stream unlimited movies and TV shows on your phone, tablet, laptop, and TV without paying more.",
-            "img": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
-
+            // "img": "https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg",
+            "img": "tt4574334", // strager thing
         }
     ])
 
-    let show_ids = [
-        "tt4574334", // strager thing
-        "tt7259746", // queer eye
-        "tt6320628" // spiderman far from home
-        // "&i=tt0245429"; // spritedAway
-        // "&i=tt0347149"; // howls moving castel
-        // "&i=tt2576852"; // kaguya
-    ];
-    let urls = show_ids.map(ele => process.env.REACT_APP_OMDB_BASE_URL + "&i=" + ele);
-    let axiosCalls = urls.map(ele => axios.get(ele));
+    // let show_ids = [
+    //     "tt4574334", // strager thing
+    //     "tt7259746", // queer eye
+    //     "tt6320628" // spiderman far from home
+    //     // "&i=tt0245429"; // spritedAway
+    //     // "&i=tt0347149"; // howls moving castel
+    //     // "&i=tt2576852"; // kaguya
+    // ];
 
     useEffect(() => {
-        // axios.all([...axiosCalls])
-        //     .then(axios.spread((...responses) => {
-        //         setStories(stories.map((ele, j) => (
-        //             {
-        //                 ...ele,
-        //                 "img": responses[j].data.Poster,
-        //             }
-        //         )));
-        //     }))
-        //     .catch(errors => console.log(errors))
+        let urls = stories.map(ele => process.env.REACT_APP_OMDB_BASE_URL + "&i=" + ele.img);
+        let axiosCalls = urls.map(ele => axios.get(ele));
+        axios.all([...axiosCalls])
+            .then(axios.spread((...responses) => {
+                setStories(stories.map((ele, j) => (
+                    {
+                        ...ele,
+                        "img": responses[j].data.Poster,
+                    }
+                )));
+            }))
+            .catch(errors => console.log(errors))
     }, []);
 
 
