@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 
 import { useParams, useLocation } from '@reach/router';
 
-
-
-
+import BodyFrom from './../../components/RegisterComps/BodyForm';
+import LandingNav from './../../components/LandingComps/LandingNav/LandingNav';
+import Footer from './../../components/Footer';
 
 export default ({ registerHandler }) => {
     let blah = new URLSearchParams(useLocation().search);
@@ -26,30 +26,15 @@ export default ({ registerHandler }) => {
         e.preventDefault();
         setEmail(e.target.value);
     }
-
-    console.log(registerHandler);
     return (
         <>
-            <h1>Register</h1>
-            <h3>Email</h3>
-            <p>{blah.get("newEmail")}</p>
-            <form onSubmit={e => registerHandler(e,firstName,lastName,email)}>
-                {email}
-                <input type="text" name="email"
-                    value={blah.get("newEmail")} 
-                    onChange={e => changeyEmail(e)} />
-                {firstName}
-                <input type="text" name="firstName" 
-                    placeholder="firstName"
-                    onChange={e => changeyFirstName(e)} />
-                {lastName}
-                <input type="text" name="lastName" 
-                    placeholder="lastName"
-                    onChange={e=> changeyLastName(e)}
-                />
-                <input type="submit" className="btn btn-danger" value="Register!" />
-            </form>
-
+            <LandingNav bgColor={"black"} />
+            <BodyFrom registerHandler={registerHandler}
+                firstName={firstName} lastName={lastName}
+                email={email}
+                changeyFirstName={changeyFirstName}
+                changeyLastName={changeyLastName} changeyEmail={changeyEmail} />
+            <Footer />
         </>
     )
 }

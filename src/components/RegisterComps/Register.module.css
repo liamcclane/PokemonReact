@@ -1,0 +1,35 @@
+.backgroundImg {
+    /* background-color: aqua; */
+    /* background-image: linear-gradient(black,); */
+    background-image: url('./../../assets//images/posters_3.jpg');
+    height: 100vh;
+    min-width: 500px;
+    width: 97%;
+}
+.myOverlay {
+    position: relative;
+    top: 60px;
+    left: -20px;
+    height: 100vh;
+    width: 97vw;
+    background-color: rgba(0, 0, 0, 0.733);
+}
+
+.card {
+    margin-top: 100px;
+    padding: 40px;
+    width: 85%;
+    background-color: rgba(0, 0, 0, 0.781);
+}
+.cardInput {
+    background-color: rgba(255, 255, 255, 0.822);
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .backgroundImg {
+    }
+    .card {
+        width: 55%;
+    }
+}
