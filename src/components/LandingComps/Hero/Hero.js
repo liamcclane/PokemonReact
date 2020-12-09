@@ -12,7 +12,7 @@ export default props => {
                 <div className={CSSClasses.after}>
                     <div className={CSSClasses.inners}>
                         <h1 className={CSSClasses.headerText}>Unlimited shows and movies to watch with friends and family</h1>
-                        <h5>somethig else</h5>
+                        <h5>Watch whenever, wherever.</h5>
                         <SignInForm />
                     </div>
                 </div>

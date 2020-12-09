@@ -41,6 +41,7 @@ export default props => {
     //     // "&i=tt2576852"; // kaguya
     // ];
 
+    // multiple axios calls
     useEffect(() => {
         let urls = stories.map(ele => process.env.REACT_APP_OMDB_BASE_URL + "&i=" + ele.img);
         let axiosCalls = urls.map(ele => axios.get(ele));
@@ -66,7 +67,7 @@ export default props => {
                         classes.push(CSSClasses.cardContainerReverse);
                     }
                     classes = classes.join(' ');
-                    console.log("StoryCards.js ", ele.img);
+                    // console.log("StoryCards.js ", ele.img);
                     return (
                         <li key={ind} className={classes}>
                             <StoryCard header={ele.header} underText={ele.underText} img={ele.img} />
