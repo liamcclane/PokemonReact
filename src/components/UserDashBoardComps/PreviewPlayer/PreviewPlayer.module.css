@@ -1,0 +1,68 @@
+.wrapper {
+    position: relative;
+    min-height: 100px;
+    width: 100%;
+    outline: 2px solid blue;
+}
+.vidView {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    z-index: -3;
+}
+.overlayDiv {
+    position: absolute;
+    /* display: flex; */
+    left: 0;
+    top: 100px;
+    bottom: 0;
+    padding: 200px;
+    background-image: linear-gradient(to right, black, rgba(0, 0, 0, 0.808), transparent);
+    /* background-color: rgba(0, 0, 0, 0.849); */
+    z-index: 2;
+}
+.text {
+    position: absolute;
+    top: 40%;
+    left: 10%;
+    font-size: 50px;
+    color: white;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .wrapper{
+        height: 20vh;
+        margin-top: 20px;
+    }   
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .wrapper{
+        height: 50vh;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .wrapper{
+        height: 50vh;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .wrapper{
+        height: 66vh;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .wrapper{
+        height: 80vh;
+    }
+}

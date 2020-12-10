@@ -2,30 +2,22 @@ import React, { useEffect, useState } from 'react';
 
 // importing 3rd party libs
 import axios from 'axios';
-import SignInForm from '../../LandingComps/SignInForm/SignInForm';
 // importing other components
-// importing css moudles
+// importing css modules
+import CSSClasses from './PreviewPlayer.module.css';
 // importing static content
 
 
 
 export default props => {
 
-    let [img, setImg] = useState("");
     let [vid, setVid] = useState("");
 
     useEffect(() => {
 
-        // axios.get(process.env.REACT_APP_OMDB_BASE_URL + "&i=tt0245429")
-        // .then(res => {
-        //     console.log(res.data);
-        // })
-        // .catch(err => console.log(err))
-        // console.log("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc&key=" + process.env.REACT_APP_YT_KEY);
         axios.get("https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=Ks-_Mh1QhMc&key=" + process.env.REACT_APP_YT_KEY)
             .then(res => {
                 console.log(res.data.items[0].id);
-                // setImg(res.data.items[0].snippet.thumbnails.standard.url);
                 setVid(res.data.items[0].id)
             })
             .catch(err => console.log(err))
@@ -34,10 +26,20 @@ export default props => {
 
     return (
         <>
-            <iframe src={"https://www.youtube.com/embed/"+ vid} allowFullScreen title="TheVid">
-            </iframe>
-            <h1>Preview Player</h1>
-
+            <div className={CSSClasses.wrapper}>
+                <iframe className={CSSClasses.vidView} src={"https://www.youtube.com/embed/" + vid} title="TheVid">
+                </iframe>
+                <div className={CSSClasses.overlayDiv}>
+                    <div className={CSSClasses.text}>
+                        <h1>PlaceHolder</h1>
+                    </div>
+                    {/* <div className="row justify-content-start mb-4">
+                        <div className="col-4 border rounded mb-4">
+                        </div> *
+                        </div>
+                    */}
+                </div>
+            </div>
         </>
     )
 }

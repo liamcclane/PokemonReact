@@ -21,12 +21,9 @@ export default ({ user, signOut }) => {
     return (
         <>
             <NavBar signOut={signOut} />
-            <div>
-                {/* <PreviewPlayer /> */}
-            </div>
-            <div style={{ height: "100px", width: "100%", background: "white" }}></div>
+            <PreviewPlayer />
 
-            <div className={CSSClasses.myContainer}>
+            {/* <div className={CSSClasses.myContainer}>
                 <div className={CSSClasses.item}>placeholder 1</div>
                 <div className={CSSClasses.item}>placeholder 2</div>
                 <div className={CSSClasses.item}>placeholder 3</div>
@@ -41,7 +38,7 @@ export default ({ user, signOut }) => {
                     </div>
                     <div className={CSSClasses.contentContainer}>content here...</div>
                 </div>
-            </div>
+            </div> */}
             <div>
                 <Carousels />
             </div>

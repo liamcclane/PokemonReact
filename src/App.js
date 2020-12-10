@@ -49,7 +49,7 @@ function App() {
 
   const [user, setUser] = useState({
     "FullName": "",
-    "username": "",
+    "username": "liamcclane",
     "email": ""
   });
 
