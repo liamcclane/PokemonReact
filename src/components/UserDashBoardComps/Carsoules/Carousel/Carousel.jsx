@@ -41,7 +41,7 @@ export default ({ ind }) => {
                     <a href={"#section3" + ind} className={CSSClasses.arrow__btn}>‹</a>
                     {images.slice(0, 5).map((ele, indx) => (
                         <div key={indx} className={CSSClasses.item} >
-                            <img src="https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg" alt="cat"/>
+                            <img src="https://m.media-amazon.com/images/M/MV5BOGZhM2FhNTItODAzNi00YjA0LWEyN2UtNjJlYWQzYzU1MDg5L2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg" alt="shrek"/>
                         </div>
                     ))}
                     {/* <div className={CSSClasses.item}>
