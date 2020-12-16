@@ -8,39 +8,22 @@ import Carousels from '../../components/UserDashBoardComps/Carsoules/Carousels';
 
 // importing stylesheets
 
-// import CSSClasses from './UserDashboard.module.css';
-import CSSClasses from './PracticeSlider.module.css';
+// import CSSClasses
 
 // importing static content images
 
 
 export default ({ user, signOut }) => {
 
-    let lists = [1, 2, 3, 4, 5];
-
     return (
         <>
             <NavBar signOut={signOut} />
-            <PreviewPlayer />
-
-            {/* <div className={CSSClasses.myContainer}>
-                <div className={CSSClasses.item}>placeholder 1</div>
-                <div className={CSSClasses.item}>placeholder 2</div>
-                <div className={CSSClasses.item}>placeholder 3</div>
-                <div className={CSSClasses.item}>placeholder 4</div>
-                <div className={CSSClasses.item}>placeholder 5</div>
+            {/* <PreviewPlayer /> */}
+            <div style={{height: "500px", width: "85%", background:"lightblue"}}>
+                Placeholder
             </div>
             <div>
-                <div className={CSSClasses.content}>
-                    <div className={CSSClasses.background}>
-                        <div className={CSSClasses.left}>left</div>
-                        <div className={CSSClasses.right}>right</div>
-                    </div>
-                    <div className={CSSClasses.contentContainer}>content here...</div>
-                </div>
-            </div> */}
-            <div>
-                <Carousels />
+                <Carousels  user={user}/>
             </div>
         </>
 

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 
 // importing 3rd party libs
 import axios from 'axios';
@@ -11,30 +11,32 @@ import CSSClasses from './Carousels.module.css';
 
 
 
-export default props => {
-    let arr = ["9902","1029"];
-    let listObj2 ={
-        "_id" : "9902",
-        "title" : "To Watch With Bae",
-        "movies" : [
+export default ({ user }) => {
+    let listObj2 = {
+        "_id": "9902",
+        "user_id": user.id,
+        "title": "To Watch List Bucket List",
+        "movies": [
             "tt0245429", // spritedAway
             "tt0347149", // howls moving castel
             "tt2576852", // kaguya
         ]
     }
     let listObj = {
-        "_id" :"1029",
-        "title" : "My Favorites",
-        "movies" : [
+        "user_id": user.id,
+        "_id": "1029",
+        "title": "My Favorites",
+        "movies": [
             "tt4574334", // stranger thing
             "tt7259746", // queer eye
             "tt6320628" // spiderman far from home
         ]
     }
+    let arr = [listObj2, listObj];
     return (
         <>
             <h1>Carousels</h1>
-            {arr.map((ele, ind) => (<Carousel key={ind} ind={ind}/>))}
+            {arr.map((ele, ind) => (<Carousel key={ind} ind={ind} movieList={ele} />))}
         </>
     )
 }
