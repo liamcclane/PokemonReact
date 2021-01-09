@@ -32,34 +32,47 @@ export default ({ ind, movieList }) => {
 
     return (
         <>
-            <h1>NETFLIX</h1>
+            <h1>{movieList.title}</h1>
             <div className={CSSClasses.wrapper}>
                 <section id={"section1" + ind}>
-                    <a href={"#section3" + ind} className={CSSClasses.arrow__btn}>‹</a>
+                    <a href={"#section3" + ind} className={[CSSClasses.arrow__btn, CSSClasses.arrow__btnLeft].join(" ")}>
+                        <div className={[CSSClasses.leftArrow, CSSClasses.arrow].join(" ")}></div>
+                    </a>
                     {carPieces.slice(0, 5).map((ele, indx) => (
                         <div key={indx} className={CSSClasses.item} >
                             <img src={ele.Poster} alt={ele.Title} />
+                            {/* <div class={CSSClasses.overlayer}>Title goes here</div> */}
                         </div>
                     ))}
-                    <a href={"#section2" + ind} className={CSSClasses.arrow__btn}>›</a>
+                    <a href={"#section2" + ind} className={[CSSClasses.arrow__btn, CSSClasses.arrow__btnRight].join(" ")}>
+                        <div className={[CSSClasses.rightArrow, CSSClasses.arrow].join(" ")}></div>
+                    </a>
                 </section>
                 <section id={"section2" + ind}>
-                    <a href={"#section1" + ind} className={CSSClasses.arrow__btn}>‹</a>
+                    <a href={"#section1" + ind} className={[CSSClasses.arrow__btn, CSSClasses.arrow__btnLeft].join(" ")}>
+                        <div className={[CSSClasses.leftArrow, CSSClasses.arrow].join(" ")}></div>
+                    </a>
                     {carPieces.slice(5, 10).map((ele, indx) => (
                         <div key={indx} className={CSSClasses.item} >
                             <img src={ele.Poster} alt={ele.Title} />
                         </div>
                     ))}
-                    <a href={"#section3" + ind} className={CSSClasses.arrow__btn}>›</a>
+                    <a href={"#section3" + ind} className={[CSSClasses.arrow__btn, CSSClasses.arrow__btnRight].join(" ")}>
+                        <div className={[CSSClasses.rightArrow, CSSClasses.arrow].join(" ")}></div>
+                    </a>
                 </section>
                 <section id={"section3" + ind}>
-                    <a href={"#section2" + ind} className={CSSClasses.arrow__btn}>‹</a>
+                    <a href={"#section2" + ind} className={[CSSClasses.arrow__btn, CSSClasses.arrow__btnLeft].join(" ")}>
+                        <div className={[CSSClasses.leftArrow, CSSClasses.arrow].join(" ")}></div>
+                    </a>
                     {carPieces.slice(10, 15).map((ele, indx) => (
                         <div key={indx} className={CSSClasses.item} >
                             <img src={ele.Poster} alt={ele.Title} />
                         </div>
                     ))}
-                    <a href={"#section1" + ind} className={CSSClasses.arrow__btn}>›</a>
+                    <a href={"#section1" + ind} className={[CSSClasses.arrow__btn, CSSClasses.arrow__btnRight].join(" ")}>
+                        <div className={[CSSClasses.rightArrow, CSSClasses.arrow].join(" ")}></div>
+                    </a>
                 </section>
             </div>
 
