@@ -1,7 +1,18 @@
-.myAccordian  *{
+.myAccordion  *{
     background-color: #303030;
     border-radius: 0px;
 }
-.myAccordian {
+.myAccordion {
     width: 100%;
+}
+
+.accordionWrapper {
+    width: 90%;
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .accordionWrapper {
+        width: 50%;
+    }
 }

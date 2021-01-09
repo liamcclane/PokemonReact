@@ -12,11 +12,11 @@ export default ({ title, information, ind, openHandler, isOpen }) => {
     let cardClasses = ["card", "mb-2", CSSClasses.myCard];
     let titleClasses = ["card-header", CSSClasses.title];
     let cardBodyClasses = ["card-body", CSSClasses.cardBody];
-   
+
     cardClasses = cardClasses.join(" ");
     titleClasses = titleClasses.join(" ");
     cardBodyClasses = cardBodyClasses.join(" ");
-   
+
     return (
         <div className={cardClasses}>
             <div className={titleClasses} id={"heading" + ind} >
